@@ -1,0 +1,16 @@
+{
+  "name": "interactive-git-network",
+  "version": "0.0.1",
+  "description": "Interactive git-like tree ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "git"
+  ],
+  "babel": {
+  },
+  "author": "Michael Porter <michaelporter.0988@gmail.com>",
+  "license": "ISC"
+}
