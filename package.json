@@ -4,7 +4,11 @@
   "description": "Interactive git-like tree ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass --update src/sass:assets/css/",
+    "babel": "babel src --out-dir js --source-maps",
+    "build": "npm run babel && npm run sass",
+    "env": "env",
+    "test": "echo 'hello!'"
   },
   "keywords": [
     "git"

@@ -1,0 +1,49 @@
+#git_command {
+  margin-top: 10px;
+  display: inline-block; }
+
+.branch {
+  position: relative; }
+  .branch .branch-name {
+    display: inline-block;
+    padding: 5px;
+    display: none; }
+
+.commit {
+  position: relative;
+  clear: both; }
+  .commit [class$='child_branches'] {
+    margin-top: 5px; }
+    .commit [class$='child_branches'] [id$='_commits'] {
+      position: relative;
+      width: 30%;
+      float: left; }
+  .commit .commit-point {
+    padding: 5px 5px;
+    height: 6px;
+    width: 6px;
+    border-radius: 800px; }
+    .commit .commit-point .sha {
+      position: relative;
+      left: 12px;
+      bottom: 4px;
+      font-size: 10px; }
+  .commit [class*='pointer_'] {
+    background-color: black;
+    color: #fff;
+    font-weight: 100;
+    font-size: 12px;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 5px;
+    left: 40px;
+    bottom: 20px;
+    position: relative;
+    float: left; }
+  .commit .link {
+    height: 50px;
+    width: 4px;
+    background-color: black;
+    margin-left: 6px; }
+
+/*# sourceMappingURL=style.css.map */
