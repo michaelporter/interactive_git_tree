@@ -4,16 +4,20 @@
   "description": "Interactive git-like tree ",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --update src/sass:assets/css/",
-    "babel": "babel src --out-dir js --source-maps",
-    "build": "npm run babel && npm run sass",
+    "build:css": "sass --update src/sass:assets/css/",
+    "build:js": "babel src/js --out-dir js --source-maps",
+    "build": "npm run build:js && npm run build:css",
     "env": "env",
-    "test": "echo 'hello!'"
+    "test": "echo 'hello!'",
+    "build:watch": "watch 'npm run build' src/"
   },
   "keywords": [
     "git"
   ],
   "babel": {},
   "author": "Michael Porter <michaelporter.0988@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "watch": "^0.16.0"
+  }
 }

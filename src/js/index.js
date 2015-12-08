@@ -9,6 +9,10 @@ const Colors = [
   "#957",
 ];
 
+const Test = [
+  "this shit"
+];
+
 const MixColors = [
   "#abf",
   "#2df", 
