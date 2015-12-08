@@ -1,6 +1,6 @@
 {
   "name": "interactive-git-network",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Interactive git-like tree ",
   "main": "index.js",
   "scripts": {
@@ -13,8 +13,7 @@
   "keywords": [
     "git"
   ],
-  "babel": {
-  },
+  "babel": {},
   "author": "Michael Porter <michaelporter.0988@gmail.com>",
   "license": "ISC"
 }
