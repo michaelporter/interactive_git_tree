@@ -6,12 +6,9 @@
   "scripts": {
     "build:css": "sass --update src/sass:assets/css/",
     "watch:css": "watch 'npm run build:css' src/sass/",
-    "build:js": "babel src/js --out-dir js --source-maps",
-    "watch:js": "watch 'npm run build:js' src/js",
+    "build:js": "babel src/js --watch --out-file assets/js/index.js --source-maps",
     "build": "npm run build:js && npm run build:css",
-    "env": "env",
-    "test": "echo 'hello!'",
-    "build:watch": "parallelshell 'npm run watch:js' 'npm run watch:css'"
+    "build:watch": "parallelshell 'npm run build:js' 'npm run watch:css'"
   },
   "keywords": [
     "git"

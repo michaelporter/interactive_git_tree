@@ -1,3 +1,5 @@
+"use strict" ;
+
 const CommitList = [];
 const BranchList = [];
 
@@ -12,6 +14,8 @@ const Colors = [
 const Test = [
   "this shit"
 ];
+
+const Test2 = "kjnsfsd";
 
 const MixColors = [
   "#abf",

@@ -1,7 +1,13 @@
+"use strict";
+
 const CommitList = [];
 const BranchList = [];
 
 const Colors = ["#cbf", "#bdf", "#fac", "#e7d", "#957"];
+
+const Test = ["this shit"];
+
+const Test2 = "kjnsfsd";
 
 const MixColors = ["#abf", "#2df", "#dac", "#b7d", "#c57"];
 
@@ -382,4 +388,5 @@ function createRebaseEvents() {
 // @TODO - so far the moving doesn't behave like git actually behaves
 // if you rebase a branch that has other branches off of it, the branch is rebased, but the remaining "orphaned" branches stay as they are, with the original commits where they were. the rebased branch COPIES it's commits over to the destination;
 // so I need to handle that scenario
+
 //# sourceMappingURL=index.js.map
