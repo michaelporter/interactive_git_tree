@@ -54,7 +54,6 @@ class Commit {
     
   get color() { 
     if (this.branches.length === 1) {
-      console.log("branch color:", this.branches[0].color)
       return this.branches[0].color;
     } else {
       return MixColors[this.branches.length];
@@ -215,7 +214,6 @@ function renderBranches(branches) {
           }
           dest = destChildList;
         } else {
-          console.log("no dest commit", b.name);
           dest = false;
         }
       }
@@ -280,10 +278,8 @@ function renderBranches(branches) {
 drawConnections(CommitList);
 
 function drawConnections(commits) {
-  console.log(commits);
   for (var i = 0; i < commits.length; i++) {
     let c = commits[i]
-    console.log("commit:", c)
     for (var j = 0; j < c.branches.length; j++) {
       let b = c.branches[j]
       let nextCommit = undefined;
@@ -295,7 +291,6 @@ function drawConnections(commits) {
       }
       
       if (nextCommit) {
-        console.log("**** next commit:", nextCommit.sha)
         let link = document.createElement('div')
         link.className = 'link'
         link.setAttribute('style', 'background-color:' + c.color)
@@ -316,7 +311,6 @@ function drawConnections(commits) {
 
       }
     }
-    console.log("----------------------")
   }
 }
 
@@ -337,40 +331,26 @@ function createRebaseEvents() {
   
   $childBranches.on('dragstart', function(e) {
     e.stopPropagation();
-    //console.log("start:", e)
     e.originalEvent.dataTransfer.setData('text/plain', this.getAttribute('id'))
-    //console.log("dragging:", e)
-    //console.log(e.y, "x", e.x)
     //e.preventDefault();
   })
   $childBranches.on('drag', function(e) {
     e.stopPropagation();
-    //console.log("d", d);
-    //console.log(e)
-    //console.log(e.y, "x", e.x)
-    
   })
   
   var $commits = $(".commit-point");
   $commits.on("dragover", function(e) {
     e.preventDefault();
-    //console.log("dragged onto:", this)
-    //console.log(e);
     
     e.originalEvent.dataTransfer.dropEffect = 'move'
   })  
   $commits.on('drop', function(e) {
     e.preventDefault();
     var branchElemId = e.originalEvent.dataTransfer.getData('text/plain');
-    console.log("branch id:", branchElemId)
     var branchElem = document.getElementById(branchElemId);
-    console.log("branch:", branchElem);
-    console.log("Dest:", this)
     var destCommitId = this.getAttribute('id').split("commit_point_")[1];
-    console.log("dest commit id:", destCommitId)
-    console.log("dest elem:", this)
     var childBranchContainer = document.getElementById("commit_" + destCommitId)
-    console.log("child branch container:", childBranchContainer)
+
     if (!childBranchContainer) {
       childBranchContainer = document.createElement("div");
       childBranchContainer.setAttribute('id', 'commit_' + destCommitId + '_child_branches')
@@ -388,12 +368,14 @@ function createRebaseEvents() {
     // in it's branch, then the command
     // will be rebasing onto that branch
     // name; otherwise it's the commit
+    /*
     var gitContainer = document.createElement("div");
-    var gitCommand = "git rebase " + branchName + " --onto " + destCommitId;
+    var gitCommand = "git rebase " +  destCommitId + branchName;
     var gitText = document.createTextNode(gitCommand);
     gitContainer.appendChild(gitText)
     
     document.getElementById("git_command").appendChild(gitContainer);
+    */
   })
 }
 
